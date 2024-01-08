@@ -122,8 +122,7 @@ class MyVector<bool> {
 	std::ostream& operator<< (std::ostream& os)
 	{
 		for(size_t i = 0; i < v_size; ++i) {
-			os << (ptr[i / bv_size] & (1ULL << (bv_size  -  (i % bv_size))));
-		}
+			os << bool((ptr[i / bv_size] & (1ULL << (bv_size  -  (i % bv_size)))));		}
 		return os;
 	}
 };
